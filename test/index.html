@@ -3,27 +3,91 @@
 <head>
   <meta charset="utf-8">
   <title>Mocha Spec Runner</title>
-  <link rel="stylesheet" href="../bower_components/mocha/mocha.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  	<link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
 </head>
 <body>
-  <div id="mocha"></div>
-  <script src="../bower_components/mocha/mocha.js"></script>
-  <script>mocha.setup('bdd');</script>
-  <script src="../bower_components/chai/chai.js"></script>
-  <script>
-    var assert = chai.assert;
-    var expect = chai.expect;
-    var should = chai.should();
-  </script>
-  <!-- bower:js -->
-  <!-- endbower -->
-  <!-- include source files here... -->
-  <!-- include spec files here... -->
-  <script src="spec/test.js"></script>
-  <script>
-    if (navigator.userAgent.indexOf('PhantomJS') === -1) {
-      mocha.run();
-    }
-  </script>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav menu">
+			<li data-menuanchor="page1"><a href="#page1">About Me</a></li>
+			<li data-menuanchor="page2"><a href="#page2">Web Development</a></li>
+			<li data-menuanchor="page3"><a href="#page3">Graphic Design</a></li>
+			<li data-menuanchor="page4"><a href="#page4">Contact Me</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+	<div id="pagepiling">
+	    <div class="section" id="section1">
+	    	<h1>Javier Vazquez</h1>
+			<p>UCF Student - Web Developer - Graphic Designer</p>
+	    </div>
+	    <div class="section" id="section2">
+	    	<div class="intro">
+<svg id="fillgauge4" width="33%" height="350" onclick="gauge4.update(NewValue());"></svg>
+<svg id="fillgauge5" width="33%" height="350" onclick="gauge5.update(NewValue());"></svg>
+<svg id="fillgauge6" width="33%" height="350" onclick="gauge6.update(NewValue());"></svg>
+<svg id="fillgauge7" width="33%" height="350" onclick="gauge7.update(NewValue());"></svg>
+<svg id="fillgauge8" width="33%" height="350" onclick="gauge8.update(NewValue());"></svg>
+	    	</div>
+	    </div>
+	    <div class="section" id="section3">
+	    	<div class="intro"><br><br><br>
+<svg id="fillgauge1" width="33%" height="400" onclick="gauge1.update(NewValue());"></svg>
+<svg id="fillgauge2" width="33%" height="400" onclick="gauge2.update(NewValue());"></svg>
+<svg id="fillgauge3" width="33%" height="400" onclick="gauge3.update(NewValue());"></svg>
+	    	</div>
+	    </div>
+		<div class="section" id="section4">
+	    	<div class="intro">
+				<form>
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="name" class="form-control" id="name" aria-describedby="name" placeholder="Enter Name">
+				</div>
+				<div class="form-group">
+					<label for="email">Email address</label>
+					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="email" placeholder="Enter email">
+				</div>
+				<div class="form-group">
+					<label for="exampleTextarea">Message</label>
+					<textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+	    	</div>
+	    </div>
+	</div>
+
+
+    <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+    <script src="js/liquidFillGauge.js" language="JavaScript"></script>
+  <script src="bower_components/jquery/dist/js/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="js/jquery.pagepiling.min.js"></script>
+	<script type="text/javascript">
+		var deleteLog = false;
+
+		$(document).ready(function() {
+	    	$('#pagepiling').pagepiling({
+	    		menu: '#menu',
+	    		anchors: ['page1', 'page2', 'page3', 'page4'],
+			    sectionsColor: ['#f53240', '#7cdbd5', '#f9be02', '#a4d555'],
+			    loopTop: true,
+			    loopBottom: true
+			});
+	    });
+    </script>
 </body>
 </html>
